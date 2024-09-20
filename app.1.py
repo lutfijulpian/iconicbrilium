@@ -9,13 +9,13 @@ from sklearn.preprocessing import StandardScaler
 
 
 # Convert image to base64
-with Image.open('/content/drive/MyDrive/Lomba Iconic/pendidikan/download.jpg') as img:
+with Image.open('/download.jpg') as img:
     buffered = BytesIO()
     img.save(buffered, format="JPEG")
     img_str = base64.b64encode(buffered.getvalue()).decode()
 
 # Convert logo to base64
-with Image.open('/content/drive/MyDrive/Lomba Iconic/pendidikan/logo.png') as logo:
+with Image.open('logo.png') as logo:
     logo_buffered = BytesIO()
     logo.save(logo_buffered, format="PNG")
     logo_str = base64.b64encode(logo_buffered.getvalue()).decode()
@@ -134,7 +134,7 @@ elif page == "Prediksi":
         """
     )
     # Load scaler
-    scaler_path = "/content/drive/MyDrive/Lomba Iconic/pendidikan/saveModel/scaler.pkl"
+    scaler_path = "scaler.pkl"
 
     if os.path.exists(scaler_path):
         try:
@@ -146,7 +146,7 @@ elif page == "Prediksi":
         st.error(f"Scaler file not found at {scaler_path}.")
 
     # Path to the model
-    model_path = "/content/drive/MyDrive/Lomba Iconic/pendidikan/saveModel/knn_model.pkl17"
+    model_path = "knn_model.pkl17"
 
     # Load model
     if os.path.exists(model_path):
