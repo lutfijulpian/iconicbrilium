@@ -146,7 +146,7 @@ elif page == "Prediksi":
         st.error(f"Scaler file not found at {scaler_path}.")
 
     # Path to the model
-    model_path = "knn_model.pkl17"
+    model_path = "knn_model.pkl"
 
     # Load model
     if os.path.exists(model_path):
